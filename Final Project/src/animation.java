@@ -16,51 +16,46 @@ public class animation extends Canvas
 	        frame.setLocationRelativeTo(null); //Sets JPanel to center of screen 
 	        frame.setResizable(false);
 	        frame.setVisible(true);
+	        
     		}
     	
     	public void paint(Graphics graphics)
     	{
+    	
     	graphics.setColor(new Color(139,69,19));
     	graphics.fill3DRect(50, 250, 100, 100, true);
     	
     	graphics.setColor(new Color(255,222,173));
     	graphics.fill3DRect(80, 285, 40, 65, true);
     	
-    	for (int i = 0; i < 350; i++)
+    	graphics.setColor(Color.BLACK);
+    	graphics.drawLine(0, 350, 500,350 );
+    	
+    	for (int x = 200; x <= 400; x++)
     		{
-    		for (int i1 = 0; i1 < 10; i1++)
-    			{
-    			graphics.setColor(new Color(210,180,140));
-    			graphics.fillRect(200, 330, 10, 30);
+    		graphics.setColor(new Color(210,180,140));
+    		graphics.fillRect(x, 330, 10, 30);
         	
-    			delay();
+    		delay();
         	
-    			graphics.setColor(Color.white);
-    			graphics.fillRect(200, 330, 10, 30);
-    			}
-    		for (int i1 = 0; i1 < 10; i1++)
-    			{
-    			graphics.setColor(new Color(210,180,140));
-    			graphics.fillRect(200, 320, 30, 10);
+    		graphics.setColor(Color.white);
+    		graphics.fillRect(x, 330, 10, 30);
+    			
+    		graphics.setColor(new Color(210,180,140));
+    		graphics.fillRect(x, 330, 30, 10);
         	
-    			delay();
+    		delay();
         	
-    			graphics.setColor(Color.white);
-    			graphics.fillRect(200, 320, 30, 10);
-    			}
-    		for (int i1 = 0; i1 < 10; i1++)
-    			{
-    			graphics.setColor(new Color(210,180,140));
-    			graphics.fillRect(320, 410, 30, 10);
-        	
-    			delay();
-        	
-    			graphics.setColor(Color.white);
-    			graphics.fillRect(320, 410, 30, 10);
-    			}
+    		graphics.setColor(Color.white);
+    		graphics.fillRect(x, 330, 30, 10);
+    		if(x==500)
+		    	{
+		    	x = 30;	
+		    	x = -x;	
+		    	}
     		}
     	}
-    	
+   	
     	public void delay()
 			{
 	        try
