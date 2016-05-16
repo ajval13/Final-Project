@@ -20,42 +20,60 @@ public class animation extends Canvas
     		}
     	
     	public void paint(Graphics graphics)
-    	{
-    	
-    	graphics.setColor(new Color(139,69,19));
-    	graphics.fill3DRect(50, 250, 100, 100, true);
-    	
-    	graphics.setColor(new Color(255,222,173));
-    	graphics.fill3DRect(80, 285, 40, 65, true);
-    	
-    	graphics.setColor(Color.BLACK);
-    	graphics.drawLine(0, 350, 500,350 );
-    	
-    	for (int x = 200; x <= 400; x++)
     		{
-    		graphics.setColor(new Color(210,180,140));
-    		graphics.fillRect(x, 330, 10, 30);
-        	
-    		delay();
-        	
-    		graphics.setColor(Color.white);
-    		graphics.fillRect(x, 330, 10, 30);
+    	
+    		graphics.setColor(new Color(135,206,250));   //The Sky
+    		graphics.fillRect(0, 0, 500, 360);
+    	
+    		graphics.setColor(new Color(250-250-210));   // The Sun
+    		graphics.fillOval(0, 0, 40, 40);
+    	
+    		graphics.setColor(new Color(139,69,19));     //Creating the house
+    		graphics.fill3DRect(50, 250, 100, 110, true);
+    	
+    		graphics.setColor(new Color(255,222,173));
+    		graphics.fill3DRect(80, 285, 40, 75, true);
+    	
+    		graphics.setColor(Color.BLACK);
+    		graphics.drawLine(0, 360, 500,360);
+    	
+    		for (int x = 200; x <=550; x++) //Moving The Person
+    			{
+    			graphics.setColor(new Color(210,180,140));
+    			graphics.fillRect(x, 285, 10, 20);
+    		
+    			delay(); //The Head
+    		
+    			graphics.setColor(new Color(135,206,250));
+    			graphics.fillRect(x, 285, 10, 20);
     			
-    		graphics.setColor(new Color(210,180,140));
-    		graphics.fillRect(x, 330, 30, 10);
+    			graphics.setColor(new Color(210,180,140));
+    			graphics.fillRect(x, 330, 10, 30);
         	
-    		delay();
+    			delay(); //One leg
         	
-    		graphics.setColor(Color.white);
-    		graphics.fillRect(x, 330, 30, 10);
-    		if(x==500)
-		    	{
-		    	x = 30;	
-		    	x = -x;	
-		    	}
-    		}
-    	}
-   	
+    			graphics.setColor(new Color(135,206,250));
+    			graphics.fillRect(x, 330, 10, 30);
+    			
+    			graphics.setColor(new Color(210,180,140));
+    			graphics.fillRect(x, 330, 30, 10);
+        	
+    			delay(); //Opposite leg
+        	
+    			graphics.setColor(new Color(135,206,250));
+    			graphics.fillRect(x, 330, 30, 10);
+
+    			graphics.setColor(Color.blue);
+    			graphics.fillRect(x, 300, 10, 30);
+    		
+    			delay();   //The Body
+    		
+    			graphics.setColor(new Color(135,206,250));
+    			graphics.fillRect(x, 300, 10, 30);
+    		
+    			
+    			}    	
+    		}   	
     	public void delay()
 			{
 	        try
@@ -64,7 +82,6 @@ public class animation extends Canvas
 					} catch (InterruptedException e)
 					{
 					e.printStackTrace();
-					}
-			}
-    	
+					}			
+			}    	
 	}
