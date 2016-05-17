@@ -36,7 +36,17 @@ public class animation extends Canvas
     	
     		graphics.setColor(Color.BLACK);
     		graphics.drawLine(0, 360, 500,360);
-    	
+    		
+    		for(int x1 = 95; x1 <= 550; x1++) //Moving a Cloud
+    				{
+    				graphics.setColor(Color.white);
+    				graphics.fillRoundRect(x1,100,40,50,10,10);
+    			
+    				cloudDelay();
+    			
+    				graphics.setColor(new Color(135,206,250));
+    				graphics.fillRoundRect(x1,100,40,50,10,10);
+    				}	
     		for (int x = 200; x <=550; x++) //Moving The Person
     			{
     			graphics.setColor(new Color(210,180,140));
@@ -70,9 +80,22 @@ public class animation extends Canvas
     		
     			graphics.setColor(new Color(135,206,250));
     			graphics.fillRect(x, 300, 10, 30);
-    		
     			
-    			}    	
+    			if(x==500)
+    		    	{
+    		    	x = 200;
+    		    	x = -x;
+    		    	}
+    			if (x==40) //Repaint the House in where his leg is at
+    				{
+        			graphics.setColor(new Color(139,69,19));
+        	    	graphics.fillRect(50, 330, 30, 10);	
+    				break;    		
+    				}	
+    			} 
+    		graphics.setFont(Font Bold);
+    		graphics.drawString("The End",200,200);
+    		
     		}   	
     	public void delay()
 			{
@@ -83,5 +106,15 @@ public class animation extends Canvas
 					{
 					e.printStackTrace();
 					}			
-			}    	
+			}
+    	public void cloudDelay()
+			{
+	        try
+					{
+					Thread.sleep(15);
+					} catch (InterruptedException e)
+					{
+					e.printStackTrace();
+					}			
+			}    
 	}
