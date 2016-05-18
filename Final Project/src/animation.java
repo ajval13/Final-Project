@@ -5,7 +5,10 @@ import javax.swing.*;
 public class animation extends Canvas 
 	{
 	private static final long	serialVersionUID	= 1L;
-
+	
+		Font trbi = new Font("Helvetica", Font.BOLD+Font.ITALIC, 24);
+		Font tr = new Font("Segoe Script", Font.BOLD+Font.ITALIC, 24);
+		
     	public static void main(String[] args) 
     		{
 	        animation canvas = new animation();
@@ -83,7 +86,7 @@ public class animation extends Canvas
     			
     			if(x==500)
     		    	{
-    		    	x = 200;
+    		    	x = 20;
     		    	x = -x;
     		    	}
     			if (x==40) //Repaint the House in where his leg is at
@@ -93,8 +96,31 @@ public class animation extends Canvas
     				break;    		
     				}	
     			} 
-    		graphics.setFont(Font Bold);
-    		graphics.drawString("The End",200,200);
+    		
+    		graphics.setColor(Color.RED);
+    		graphics.setFont(trbi);
+    		graphics.drawString("FIN (^.^) ",200,200);
+    		
+    		graphics.setColor(Color.BLUE);
+    		graphics.setFont(tr);
+    		graphics.drawString("By Alex Valdo",200,250);
+    		
+    		for(int x1 = 0; x1 <= 520; x1++) //Moving a Cloud
+				{
+				graphics.setColor(Color.white);
+				graphics.fillRoundRect(x1,100,40,50,10,10);
+			
+				cloudDelay();
+			
+				graphics.setColor(new Color(135,206,250));
+				graphics.fillRoundRect(x1,100,40,50,10,10);
+				
+				if(x1==500)
+    		    	{
+    		    	x1 = 20;
+    		    	x1 = -x1;
+    		    	}
+				}	
     		
     		}   	
     	public void delay()
